@@ -175,7 +175,6 @@ document.getElementById("submit").addEventListener("click", () => {
 
     // отправка в Telegram
     if (window.Telegram && Telegram.WebApp) {
-        Telegram.WebApp.sendData(JSON.stringify(payload));
         Telegram.WebApp.HapticFeedback.impactOccurred("medium");
     }
 
