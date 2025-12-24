@@ -208,3 +208,9 @@ button:active {
         transform: translateY(0) scale(1);
     }
 }
+
+.who-gets button:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    box-shadow: none;
+}
