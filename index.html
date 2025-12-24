@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Blackjack Counter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Telegram WebApp -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- CSS будет позже -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1 class="logo">BLACKJACK</h1>
+
+        <div class="decks-select">
+            <label for="decks">Колоды:</label>
+            <select id="decks">
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6" selected>6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- GAME TABLE -->
+    <main class="table">
+
+        <!-- DEALER -->
+        <section class="dealer">
+            <h2>Dealer</h2>
+            <div class="cards" id="dealer-cards">
+                <!-- карты дилера -->
+            </div>
+        </section>
+
+        <!-- PLAYER -->
+        <section class="player">
+            <h2>Player</h2>
+            <div class="cards" id="player-cards">
+                <!-- карты игрока -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CONTROLS -->
+    <section class="controls">
+
+        <div class="card-values">
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="10">10</button>
+            <button data-value="J">J</button>
+            <button data-value="Q">Q</button>
+            <button data-value="K">K</button>
+            <button data-value="A">A</button>
+        </div>
+
+        <div class="card-suits">
+            <button data-suit="♠">♠</button>
+            <button data-suit="♥">♥</button>
+            <button data-suit="♦">♦</button>
+            <button data-suit="♣">♣</button>
+        </div>
+
+        <div class="who-gets">
+            <button id="to-player">Игроку</button>
+            <button id="to-dealer">Дилеру</button>
+            <button id="undo">Undo</button>
+            <button id="submit">Отправить</button>
+        </div> 
+        
+                <!-- Сообщение после отправки -->
+        <div id="result-message" style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.85);
+            color: #e6c200;
+            font-size: 20px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            display: none;
+            text-align: center;
+            z-index: 999;
+        ">
+        </div>
+    </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
