@@ -28,8 +28,18 @@ function updateStats() {
     const cardsLeft = cardsInDeck - cardsDealt;
     const remainingDecks = cardsLeft / 52;
 
-    // логика обновления UI будет здесь позже
+    // const trueCount = remainingDecks > 0 ? runningCount / remainingDecks : 0;
+
+    // // Обновляем UI
+    // const runningCountEl = document.getElementById("running-count");
+    // const trueCountEl = document.getElementById("true-count");
+    // const cardsLeftEl = document.getElementById("cards-left");
+
+    // runningCountEl.textContent = runningCount;
+    // trueCountEl.textContent = trueCount.toFixed(2);
+    // cardsLeftEl.textContent = cardsLeft;
 }
+
 
 // ================== функцию Проверки ==================
 function updateSubmitState() {
@@ -153,17 +163,17 @@ document.getElementById("submit").addEventListener("click", () => {
     let probability = 0;
 
     if (trueCount >= 8) {
-        decision = "СТАВИТЬ АГРЕССИВНО";
+        decision = "СТАВИТЬ";
         probability = randomBetween(75, 90);
     } else if (trueCount >= 6) {
         decision = "СТАВИТЬ";
         probability = randomBetween(65, 75);
     } else if (trueCount >= 4) {
-        decision = "МОЖНО СТАВИТЬ";
-        probability = randomBetween(55, 65);
+        decision = "СТАВИТЬ";
+        probability = randomBetween(40, 59);
     } else {
         decision = "НЕ СТАВИТЬ";
-        probability = randomBetween(40, 55);
+        probability = randomBetween(15, 26);
     }
 
     const payload = {
