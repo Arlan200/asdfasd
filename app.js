@@ -28,7 +28,7 @@ function updateStats() {
     const cardsLeft = cardsInDeck - cardsDealt;
     const remainingDecks = cardsLeft / 52;
 
-    // const trueCount = remainingDecks > 0 ? runningCount / remainingDecks : 0;
+    const trueCount = remainingDecks > 0 ? runningCount / remainingDecks : 0;
 
     // // Обновляем UI
     // const runningCountEl = document.getElementById("running-count");
@@ -162,19 +162,21 @@ document.getElementById("submit").addEventListener("click", () => {
     let decision = "НЕ СТАВИТЬ";
     let probability = 0;
 
-    if (trueCount >= 8) {
+    if (runningCount >= 8) {
         decision = "СТАВИТЬ";
         probability = randomBetween(75, 90);
-    } else if (trueCount >= 6) {
+    } else if (runningCount >= 6) {
         decision = "СТАВИТЬ";
         probability = randomBetween(65, 75);
-    } else if (trueCount >= 4) {
+    } else if (runningCount >= 4) {
         decision = "СТАВИТЬ";
         probability = randomBetween(40, 59);
     } else {
         decision = "НЕ СТАВИТЬ";
         probability = randomBetween(15, 26);
     }
+
+
 
     const payload = {
         runningCount: runningCount,
